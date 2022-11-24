@@ -21,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettify": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +44,8 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
+    "eslint": "^8.28.0",
+    "prettier": "^2.8.0",
     "styled-components": "^5.3.6"
   }
 }

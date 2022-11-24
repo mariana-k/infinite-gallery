@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { color, typography } from '../../../styles/global';
+import styled from 'styled-components'
+import { color, typography } from '../../../styles/global'
 
 export const ImageDescription = styled.h3`
   color: ${color.primary};
@@ -7,4 +7,4 @@ export const ImageDescription = styled.h3`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-`;
+`

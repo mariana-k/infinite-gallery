@@ -1,11 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const GalleryWrapper = styled.div`
-  max-width: 1024px;
   margin: 0 auto;
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, 320px);
-  grid-auto-rows: minmax(20px, auto);
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, 15rem);
+  grid-auto-rows: minmax(1rem, auto);
   justify-content: center;
-`;
+`

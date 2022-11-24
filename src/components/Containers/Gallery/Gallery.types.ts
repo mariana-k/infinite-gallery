@@ -1,31 +1,31 @@
-import { ImageCardProps } from "../../Molecules/ImageCard/ImageCard.types";
+import { ImageCardProps } from '../../Molecules/ImageCard/ImageCard.types'
 
 export type GalleryProps = {
-  images?: ImageCardProps[],
-};
+  images?: ImageCardProps[]
+}
 
 export type ImgState = {
-  images: Img[];
-  fetching: boolean;
-};
+  images: Img[]
+  fetching: boolean
+}
 
 export type Img = {
-  id: string;
-  description: string;
-  urls: Urls;
-};
+  id: string
+  description: string
+  urls: Urls
+}
 
 export type Urls = {
   full: string
 }
 
 export type ImgAction =
-  | { type: "FETCHING_IMAGES", fetching: boolean}
-  | { type: "STACK_IMAGES"; results: Img[] }
-  | { type: "failure" };
+  | { type: 'FETCHING_IMAGES'; fetching: boolean }
+  | { type: 'STACK_IMAGES'; results: Img[] }
+  | { type: 'failure' }
 
 export type PageState = {
-  page: number;
-};
+  page: number
+}
 
-export type PageAction = { type: "ADVANCE_PAGE" };
+export type PageAction = { type: 'ADVANCE_PAGE' }

@@ -1,9 +1,11 @@
-import Gallery from './components/Containers/Gallery';
+import { useState } from 'react'
+import Gallery from './components/Containers/Gallery'
+import { Context } from './utils/context'
 
 const App = () => {
-  return (
-    <Gallery />
-  );
-};
+  const [context, setContext] = useState({value: 'all', isReady: true});
 
-export default App;
+  return <Context.Provider value={[context, setContext]}><Gallery /></Context.Provider>
+}
+
+export default App
