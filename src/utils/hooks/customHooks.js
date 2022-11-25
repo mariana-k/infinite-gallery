@@ -14,13 +14,13 @@ export const useFetch = (data, dispatch) => {
     })
 
     if (context.isNew) {
-      dispatch({ type: 'RESET_IMAGES', images: []})
-      setContext({...context, isNew: false})
+      dispatch({ type: 'RESET_IMAGES', images: [] })
+      setContext({ ...context, isNew: false })
     }
 
     unsplash.search
       .getPhotos({
-        query: context.value,
+        query: context.newValue,
         page: data.page,
         perPage: 10,
       })
@@ -34,7 +34,7 @@ export const useFetch = (data, dispatch) => {
         }
         dispatch({ type: 'FETCHING_IMAGES', fetching: false })
       })
-  }, [dispatch, data.page, context])
+  }, [dispatch, data.page, context.newValue])
 }
 
 export const useInfiniteScroll = (scrollRef, dispatch) => {

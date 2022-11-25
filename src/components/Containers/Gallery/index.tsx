@@ -43,10 +43,10 @@ const Gallery = () => {
   })
   let bottomBoundaryRef = useRef(null)
 
-  useFetch({ ...pager, query: context.value }, imgDispatch)
+  useFetch({ ...pager, query: context.newValue }, imgDispatch)
   useLazyLoading('.card-img-top', imgData.images)
   useInfiniteScroll(bottomBoundaryRef, pagerDispatch)
-   
+
   return (
     <>
       <Search />
