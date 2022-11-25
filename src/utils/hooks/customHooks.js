@@ -4,17 +4,23 @@ import { createApi } from 'unsplash-js'
 import { Context } from '../context'
 
 export const useFetch = (data, dispatch) => {
-  const [context] = useContext(Context)
+  const [context, setContext] = useContext(Context)
 
   useEffect(() => {
     dispatch({ type: 'FETCHING_IMAGES', fetching: true })
+
     const unsplash = createApi({
       accessKey: 'QHnHU5WIGkD8Q17EUYic0KVrKtA_Wpx7EApKQ7I3FXA',
     })
 
+    if (context.isNew) {
+      dispatch({ type: 'RESET_IMAGES', images: []})
+      setContext({...context, isNew: false})
+    }
+
     unsplash.search
       .getPhotos({
-        query: context.newValue,
+        query: context.value,
         page: data.page,
         perPage: 10,
       })

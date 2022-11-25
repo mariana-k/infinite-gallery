@@ -8,7 +8,7 @@ import type { FC } from 'react'
 const Button: FC<ButtonProps> = ({ value }) => {
   const [context, setContext] = useContext(Context)
   const handleContext = () => {
-    setContext({ ...context, newValue: context.value })
+    setContext({ ...context, isNew: true })
   }
 
   return (

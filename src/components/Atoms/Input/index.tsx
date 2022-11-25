@@ -8,7 +8,7 @@ import type { FC } from 'react'
 const Image: FC<InputProps> = ({ placeholder }) => {
   const [context, setContext] = useContext(Context)
   const handleContext = (e: React.FormEvent<HTMLInputElement>) => {
-    setContext({ ...context, value: e.currentTarget.value, oldValue: context.value })
+    setContext({ ...context, value: e.currentTarget.value, isNew: false })
   }
 
   return (

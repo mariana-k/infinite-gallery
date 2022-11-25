@@ -11,6 +11,11 @@ const Gallery = () => {
 
   const imgReducer = (state: ImgState, action: ImgAction): ImgState => {
     switch (action.type) {
+      case 'RESET_IMAGES':
+        return {
+          ...state,
+          images: [],
+        }
       case 'STACK_IMAGES':
         return {
           ...state,
@@ -38,10 +43,10 @@ const Gallery = () => {
   })
   let bottomBoundaryRef = useRef(null)
 
-  useFetch({ ...pager, query: context.newValue }, imgDispatch)
+  useFetch({ ...pager, query: context.value }, imgDispatch)
   useLazyLoading('.card-img-top', imgData.images)
   useInfiniteScroll(bottomBoundaryRef, pagerDispatch)
-
+   
   return (
     <>
       <Search />

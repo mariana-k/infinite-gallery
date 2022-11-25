@@ -22,6 +22,7 @@ export type Urls = {
 export type ImgAction =
   | { type: 'FETCHING_IMAGES'; fetching: boolean }
   | { type: 'STACK_IMAGES'; results: Img[] }
+  | { type: 'RESET_IMAGES'; results: Img[] }
   | { type: 'failure' }
 
 export type PageState = {
