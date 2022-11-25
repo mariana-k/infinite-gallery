@@ -15,7 +15,9 @@ export const StyledInput = styled.input`
   background: ${color.light};
   border: none;
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     border: none;
     outline: none;
     box-shadow: none;

@@ -1,20 +1,20 @@
-import { useReducer, useRef, useContext, useState} from 'react'
+import { useReducer, useRef, useContext } from 'react'
 import { ImgState, ImgAction, PageState, PageAction, Img } from './Gallery.types'
 import { GalleryWrapper } from './Gallery.styles'
 import { useFetch, useInfiniteScroll, useLazyLoading } from '../../../utils/hooks/customHooks'
 import Search from '../../Molecules/Search'
 import ImageCard from '../../Molecules/ImageCard'
-import { Context } from "../../../utils/context";
+import { Context } from '../../../utils/context'
 
 const Gallery = () => {
-  const [context] = useContext(Context);
+  const [context] = useContext(Context)
 
   const imgReducer = (state: ImgState, action: ImgAction): ImgState => {
     switch (action.type) {
       case 'STACK_IMAGES':
         return {
           ...state,
-          images: state.images.concat(action.results),
+          images: context.oldValue === context.newValue ? state.images.concat(action.results) : action.results,
         }
       case 'FETCHING_IMAGES':
         return { ...state, fetching: action.fetching }
@@ -31,9 +31,6 @@ const Gallery = () => {
         return state
     }
   }
-
-  const [queryValue, setQueryValue] = useState(context.value)
-
   const [pager, pagerDispatch] = useReducer(pageReducer, { page: 0 })
   const [imgData, imgDispatch] = useReducer(imgReducer, {
     images: [],
@@ -41,7 +38,7 @@ const Gallery = () => {
   })
   let bottomBoundaryRef = useRef(null)
 
-  useFetch({ ...pager, query: queryValue }, imgDispatch)
+  useFetch({ ...pager, query: context.newValue }, imgDispatch)
   useLazyLoading('.card-img-top', imgData.images)
   useInfiniteScroll(bottomBoundaryRef, pagerDispatch)
 

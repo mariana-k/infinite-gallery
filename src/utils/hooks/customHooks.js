@@ -1,10 +1,11 @@
 /* eslint-disable no-undef */
 import { useEffect, useCallback, useRef, useContext } from 'react'
 import { createApi } from 'unsplash-js'
-import { Context } from "../context";
+import { Context } from '../context'
 
 export const useFetch = (data, dispatch) => {
-  const [context] = useContext(Context);
+  const [context] = useContext(Context)
+
   useEffect(() => {
     dispatch({ type: 'FETCHING_IMAGES', fetching: true })
     const unsplash = createApi({
@@ -13,7 +14,7 @@ export const useFetch = (data, dispatch) => {
 
     unsplash.search
       .getPhotos({
-        query: context.value,
+        query: context.newValue,
         page: data.page,
         perPage: 10,
       })
@@ -27,7 +28,7 @@ export const useFetch = (data, dispatch) => {
         }
         dispatch({ type: 'FETCHING_IMAGES', fetching: false })
       })
-  }, [dispatch, data.page, context.value])
+  }, [dispatch, data.page, context])
 }
 
 export const useInfiniteScroll = (scrollRef, dispatch) => {

@@ -13,12 +13,14 @@ export const width = {
   button: '3rem',
   search: '35rem',
   gap: '0.625rem',
+  logo: '13rem',
 }
 
 export const height = {
   input: '3rem',
   button: '3rem',
   search: '3rem',
+  gap: '2rem',
 }
 
 export const radius = {
