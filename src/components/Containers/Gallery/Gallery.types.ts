@@ -16,7 +16,7 @@ export type Img = {
 }
 
 export type Urls = {
-  full: string
+  small: string
 }
 
 export type ImgAction =

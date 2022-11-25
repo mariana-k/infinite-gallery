@@ -1,4 +1,4 @@
-import { useReducer, useRef, useContext } from 'react'
+import { useReducer, useRef, useContext, useState } from 'react'
 import { ImgState, ImgAction, PageState, PageAction, Img } from './Gallery.types'
 import { GalleryWrapper } from './Gallery.styles'
 import { useFetch, useInfiniteScroll, useLazyLoading } from '../../../utils/hooks/customHooks'
@@ -14,7 +14,7 @@ const Gallery = () => {
       case 'STACK_IMAGES':
         return {
           ...state,
-          images: context.oldValue === context.newValue ? state.images.concat(action.results) : action.results,
+          images: state.images.concat(action.results),
         }
       case 'FETCHING_IMAGES':
         return { ...state, fetching: action.fetching }
@@ -52,7 +52,7 @@ const Gallery = () => {
           return (
             <ImageCard
               key={`${index}-${id}`}
-              image={{ src: urls.full, altText: description }}
+              image={{ src: urls.small, altText: description }}
               description={{ text: description }}
             />
           )

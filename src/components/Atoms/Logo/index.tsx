@@ -5,14 +5,14 @@ const Image: FC = () => {
   return (
     <StyledLogoWrapper>
       <svg width="208" height="48" viewBox="0 0 208 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_12_22)">
-          <g clip-path="url(#clip1_12_22)">
+        <g clipPath="url(#clip0_12_22)">
+          <g clipPath="url(#clip1_12_22)">
             <rect
               width="13.8141"
               height="18.5193"
               transform="matrix(0.627213 0.778848 0.752834 -0.65821 7.03131 18.1874)"
               fill="#7D59E6"
-              fill-opacity="0.7"
+              fillOpacity="0.7"
             />
             <rect
               width="8.3082"
@@ -25,7 +25,7 @@ const Image: FC = () => {
               fill="#6138DB"
             />
           </g>
-          <g clip-path="url(#clip2_12_22)">
+          <g clipPath="url(#clip2_12_22)">
             <rect
               width="13.8141"
               height="18.5175"
