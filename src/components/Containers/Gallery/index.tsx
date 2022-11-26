@@ -1,4 +1,4 @@
-import { useReducer, useRef, useContext, useState } from 'react'
+import { useReducer, useRef, useContext } from 'react'
 import { ImgState, ImgAction, PageState, PageAction, Img } from './Gallery.types'
 import { GalleryWrapper } from './Gallery.styles'
 import { useFetch, useInfiniteScroll, useLazyLoading } from '../../../utils/hooks/customHooks'
@@ -41,7 +41,7 @@ const Gallery = () => {
     images: [],
     fetching: true,
   })
-  let bottomBoundaryRef = useRef(null)
+  const bottomBoundaryRef = useRef(null)
 
   useFetch({ ...pager, query: context.newValue }, imgDispatch)
   useLazyLoading('.card-img-top', imgData.images)
@@ -50,7 +50,7 @@ const Gallery = () => {
   return (
     <>
       <Search />
-      <GalleryWrapper>
+      <GalleryWrapper className="mm-masonry" id="mm-masonry">
         {imgData.images.map((image: Img, index: number) => {
           const { description, urls, id } = image
 

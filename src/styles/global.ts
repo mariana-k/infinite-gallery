@@ -8,7 +8,6 @@ export const color = {
 }
 
 export const width = {
-  imageCard: '15rem',
   input: '30rem',
   button: '3rem',
   search: '35rem',
