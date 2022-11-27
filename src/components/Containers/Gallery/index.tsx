@@ -1,6 +1,6 @@
 import { useReducer, useRef, useContext } from 'react'
 import { ImgState, ImgAction, PageState, PageAction, Img } from './Gallery.types'
-import { GalleryWrapper } from './Gallery.styles'
+import { StyledGalleryWrapper } from './Gallery.styles'
 import { useFetch, useInfiniteScroll, useLazyLoading } from '../../../utils/hooks/customHooks'
 import Search from '../../Molecules/Search'
 import ImageCard from '../../Molecules/ImageCard'
@@ -50,7 +50,7 @@ const Gallery = () => {
   return (
     <>
       <Search />
-      <GalleryWrapper className="mm-masonry" id="mm-masonry">
+      <StyledGalleryWrapper className="mm-masonry" id="mm-masonry">
         {imgData.images.map((image: Img, index: number) => {
           const { description, urls, id } = image
 
@@ -62,7 +62,7 @@ const Gallery = () => {
             />
           )
         })}
-      </GalleryWrapper>
+      </StyledGalleryWrapper>
       <div ref={bottomBoundaryRef}></div>
     </>
   )

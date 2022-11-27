@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { color, typography } from '../../../styles/global'
 
-export const ImageDescription = styled.h3`
+export const StyledImageDescription = styled.h3`
   color: ${color.primary};
   ${typography.imageDescription}
   white-space: nowrap;

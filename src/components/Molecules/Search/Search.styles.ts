@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { height, width } from '../../../styles/global'
 
-export const SearchWrapper = styled.div`
+export const StyledSearchWrapper = styled.div`
   width: ${width.search};
   height: ${height.search};
   margin: ${height.gap} auto;

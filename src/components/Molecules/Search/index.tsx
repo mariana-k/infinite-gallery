@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { SearchWrapper } from './Search.styles'
+import { StyledSearchWrapper } from './Search.styles'
 import type { SearchProps } from './Search.types'
 import type { FC } from 'react'
 import Input from '../../Atoms/Input'
@@ -10,10 +10,10 @@ const Search: FC<SearchProps> = ({ input, button }) => {
   const context = useContext(Context)
 
   return (
-    <SearchWrapper>
+    <StyledSearchWrapper>
       <Input placeholder={input?.placeholder} value={context} />
       <Button value={button?.value} />
-    </SearchWrapper>
+    </StyledSearchWrapper>
   )
 }
 
