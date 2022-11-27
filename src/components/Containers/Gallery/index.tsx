@@ -1,7 +1,7 @@
 import { useReducer, useRef, useContext } from 'react'
 import { ImgState, ImgAction, PageState, PageAction, Img } from './Gallery.types'
 import { StyledGalleryWrapper } from './Gallery.styles'
-import { useFetch, useInfiniteScroll, useLazyLoading } from '../../../utils/hooks/customHooks'
+import { useFetch, useInfiniteScroll, useLazyLoading } from '../../../utils/hooks'
 import Search from '../../Molecules/Search'
 import ImageCard from '../../Molecules/ImageCard'
 import { Context } from '../../../utils/context'
