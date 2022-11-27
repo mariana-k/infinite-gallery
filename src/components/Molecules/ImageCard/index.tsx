@@ -17,12 +17,19 @@ const ImageCard: FC<ImageCardProps> = ({ image, description }) => {
     return imageHeight + imageDescriptionHeight
   }
   useEffect(() => {
-    setImageHeight(handleImageCardHeight(ref ? ref.current ? Number(ref.current.children[0].getAttribute('data-height')) : 0 : 0))
+    setImageHeight(
+      handleImageCardHeight(ref ? (ref.current ? Number(ref.current.children[0].getAttribute('data-height')) : 0) : 0)
+    )
   }, [imageHeight, context])
 
   return (
-    <StyledImageCardWrapper cardHeight={handleImageCardHeight(ref ? ref.current ? Number(ref.current.children[0].getAttribute('data-height')) : 0 : 0)}
-    cardWidth={ref ? ref.current ? Number(ref.current.children[0].getAttribute('data-width')) : 0 : 0} ref={ref}>
+    <StyledImageCardWrapper
+      cardHeight={handleImageCardHeight(
+        ref ? (ref.current ? Number(ref.current.children[0].getAttribute('data-height')) : 0) : 0
+      )}
+      cardWidth={ref ? (ref.current ? Number(ref.current.children[0].getAttribute('data-width')) : 0) : 0}
+      ref={ref}
+    >
       <Image src={image?.src} altText={image?.altText} />
       <ImageDescription text={description?.text} />
     </StyledImageCardWrapper>
