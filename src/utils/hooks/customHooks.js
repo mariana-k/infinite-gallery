@@ -1,8 +1,7 @@
 /* eslint-disable no-undef */
-import { env } from 'process'
 import { useEffect, useCallback, useRef, useContext } from 'react'
 import { createApi } from 'unsplash-js'
-import { Context } from '../context'
+import { Context } from '../context/context'
 
 export const useFetch = (data, dispatch) => {
   const [context, setContext] = useContext(Context)
@@ -11,7 +10,7 @@ export const useFetch = (data, dispatch) => {
     dispatch({ type: 'FETCHING_IMAGES', fetching: true })
 
     const unsplash = createApi({
-      accessKey: env.US_ACCESS_KEY,
+      accessKey: process.env.US_ACCESS_KEY,
     })
 
     if (context.isNew) {
