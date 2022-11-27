@@ -4,7 +4,7 @@ import Logo from './components/Atoms/Logo'
 import { Context } from './utils/context'
 
 const App = () => {
-  const defaultValue: string = 'All'
+  const defaultValue = 'All'
   const [context, setContext] = useState({ value: defaultValue, newValue: defaultValue, isNew: false })
 
   return (
