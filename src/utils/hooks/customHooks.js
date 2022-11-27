@@ -10,7 +10,7 @@ export const useFetch = (data, dispatch) => {
     dispatch({ type: 'FETCHING_IMAGES', fetching: true })
 
     const unsplash = createApi({
-      accessKey: process.env.US_ACCESS_KEY,
+      accessKey: process.env.REACT_APP_US_ACCESS_KEY,
     })
 
     if (context.isNew) {
