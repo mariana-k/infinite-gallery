@@ -1,5 +1,9 @@
 import { css } from 'styled-components'
 
+export const breakpoints = {
+  m: '768px',
+}
+
 export const color = {
   primary: '#085385',
   light: '#f6f7f9',
