@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { useEffect, useCallback, useRef, useContext } from 'react'
 import { createApi } from 'unsplash-js'
-import { Context } from '../context/context'
+import { Context } from '../context'
 
 export const useFetch = (data, dispatch) => {
   const [context, setContext] = useContext(Context)
