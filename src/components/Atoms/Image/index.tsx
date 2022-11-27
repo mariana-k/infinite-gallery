@@ -20,7 +20,7 @@ const Image: FC<ImageProps> = ({ src, altText }) => {
       ref={imgElement}
       data-height={imgElement ? (imgElement.current ? imgElement.current.naturalHeight : 0) : 0}
       data-width={width}
-      className="card-img-top mm-masonry__img"
+      className="card-img-top"
       src={imagePlaceholder}
       alt={altText}
       data-src={src}

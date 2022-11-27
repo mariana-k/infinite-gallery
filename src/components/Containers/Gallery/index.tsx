@@ -50,7 +50,7 @@ const Gallery = () => {
   return (
     <>
       <Search />
-      <StyledGalleryWrapper className="mm-masonry" id="mm-masonry">
+      <StyledGalleryWrapper>
         {imgData.images.map((image: Img, index: number) => {
           const { description, urls, id } = image
 
