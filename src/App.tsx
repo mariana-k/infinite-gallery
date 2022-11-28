@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import Gallery from './components/Containers/Gallery'
 import Logo from './components/Atoms/Logo'
-import { Context } from './utils/context'
+import { Context, ISearch, defaultSearch } from './utils/context'
 
 const App = () => {
-  const defaultValue = 'All'
-  const [context, setContext] = useState({ value: defaultValue, newValue: defaultValue, isNew: true })
+  const [context, setContext] = useState<ISearch>(defaultSearch)
 
   return (
     <Context.Provider value={[context, setContext]}>

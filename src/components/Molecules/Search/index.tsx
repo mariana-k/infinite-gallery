@@ -7,11 +7,11 @@ import Button from '../../Atoms/Button'
 import { Context } from '../../../utils/context'
 
 const Search: FC<SearchProps> = ({ input, button }) => {
-  const context = useContext(Context)
+  const [context] = useContext(Context)
 
   return (
     <StyledSearchWrapper>
-      <Input placeholder={input?.placeholder} value={context} />
+      <Input placeholder={input?.placeholder} value={context.value} />
       <Button value={button?.value} />
     </StyledSearchWrapper>
   )

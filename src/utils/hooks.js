@@ -29,7 +29,7 @@ export const useFetch = (data, dispatch) => {
           dispatch({ type: 'FETCHING_IMAGES', fetching: false })
         } else {
           const feed = result.response
-          const { results } = feed        
+          const { results } = feed
           dispatch({ type: 'STACK_IMAGES', results })
         }
         dispatch({ type: 'FETCHING_IMAGES', fetching: false })
