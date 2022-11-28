@@ -4,7 +4,7 @@ This is a React app. It uses Unsplash Api to load images infinitely. You can sea
 
 Deployed App [https://infinite-gallery-7iq8-2u7zqf23q-mariana-k.vercel.app](https://infinite-gallery-7iq8-2u7zqf23q-mariana-k.vercel.app)
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

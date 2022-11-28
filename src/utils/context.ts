@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext, Dispatch, SetStateAction } from 'react'
 
 export type ISearch = {
   value: string
@@ -7,5 +7,5 @@ export type ISearch = {
 }
 const defaultValue = 'All'
 export const defaultSearch = { value: defaultValue, newValue: defaultValue, isNew: true }
-type ISearchContext = [ISearch, React.Dispatch<React.SetStateAction<ISearch>>]
+type ISearchContext = [ISearch, Dispatch<SetStateAction<ISearch>>]
 export const Context = createContext<ISearchContext>([defaultSearch, () => null])
