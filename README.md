@@ -2,7 +2,7 @@
 
 This is a React app. It uses Unsplash Api to load images infinitely. You can search for images by typing a search term in the input field and clicking the search button.
 
-Deployed App [https://infinite-gallery-7iq8-2u7zqf23q-mariana-k.vercel.app](https://infinite-gallery-7iq8-2u7zqf23q-mariana-k.vercel.app)
+Deployed App [https://infinite-gallery-mariana-k.vercel.app](https://infinite-gallery-mariana-k.vercel.app)
 
 ## Getting Started with Create React App
 
