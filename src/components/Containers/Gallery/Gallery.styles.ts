@@ -8,7 +8,7 @@ export const StyledGalleryWrapper = styled.div`
   @media (min-width: ${breakpoints.m}) {
     --_col-width: var(--col-width, 280);
     --_col-width-px: calc(var(--_col-width) * 1px);
-    --_gap: calc(var(--gap, 20) * 1px);
+    --_gap: calc(var(--gap, 4) * 1px);
     display: var(--display, grid);
     grid-template-columns: repeat(auto-fill, minmax(var(--_col-width-px), 1fr));
     grid-auto-rows: 1px;

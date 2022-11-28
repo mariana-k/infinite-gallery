@@ -7,4 +7,16 @@ export const StyledImageDescription = styled.h3`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @keyframes fadeIn {
+    99% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
 `
