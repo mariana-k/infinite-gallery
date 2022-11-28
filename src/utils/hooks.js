@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { useEffect, useCallback, useRef, useContext } from 'react'
+import { useEffect, useCallback, useContext } from 'react'
 import { createApi } from 'unsplash-js'
 import { Context } from './context'
 
@@ -29,7 +29,7 @@ export const useFetch = (data, dispatch) => {
           dispatch({ type: 'FETCHING_IMAGES', fetching: false })
         } else {
           const feed = result.response
-          const { results } = feed
+          const { results } = feed        
           dispatch({ type: 'STACK_IMAGES', results })
         }
         dispatch({ type: 'FETCHING_IMAGES', fetching: false })
@@ -56,30 +56,4 @@ export const useInfiniteScroll = (scrollRef, dispatch) => {
       scrollObserver(scrollRef.current)
     }
   }, [scrollObserver, scrollRef])
-}
-
-export const useLazyLoading = (imgSelector, items) => {
-  const imgObserver = useCallback((node) => {
-    const intObs = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.intersectionRatio > 0) {
-          const currentImg = en.target
-          const newImgSrc = currentImg.dataset.src
-          currentImg.src = newImgSrc
-          intObs.unobserve(node)
-        }
-      })
-    })
-    intObs.observe(node)
-  }, [])
-
-  const imagesRef = useRef(null)
-
-  useEffect(() => {
-    imagesRef.current = document.querySelectorAll(imgSelector)
-
-    if (imagesRef.current) {
-      imagesRef.current.forEach((img) => imgObserver(img))
-    }
-  }, [imgObserver, imagesRef, imgSelector, items])
 }

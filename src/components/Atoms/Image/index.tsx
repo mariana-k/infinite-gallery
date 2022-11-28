@@ -20,10 +20,9 @@ const Image: FC<ImageProps> = ({ src, altText }) => {
       ref={imgElement}
       data-height={imgElement ? (imgElement.current ? imgElement.current.naturalHeight : 0) : 0}
       data-width={width}
-      className="card-img-top"
-      src={imagePlaceholder}
+      src={src}
       alt={altText}
-      data-src={src}
+      data-src={src ? src : imagePlaceholder}
     />
   )
 }

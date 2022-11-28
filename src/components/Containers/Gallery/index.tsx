@@ -1,7 +1,7 @@
 import { useReducer, useRef, useContext } from 'react'
 import { ImgState, ImgAction, PageState, PageAction, Img } from './Gallery.types'
 import { StyledGalleryWrapper } from './Gallery.styles'
-import { useFetch, useInfiniteScroll, useLazyLoading } from '../../../utils/hooks'
+import { useFetch, useInfiniteScroll } from '../../../utils/hooks'
 import Search from '../../Molecules/Search'
 import ImageCard from '../../Molecules/ImageCard'
 import { Context } from '../../../utils/context'
@@ -44,7 +44,6 @@ const Gallery = () => {
   const bottomBoundaryRef = useRef(null)
 
   useFetch({ ...pager, query: context.newValue }, imgDispatch)
-  useLazyLoading('.card-img-top', imgData.images)
   useInfiniteScroll(bottomBoundaryRef, pagerDispatch)
 
   return (

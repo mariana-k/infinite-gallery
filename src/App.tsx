@@ -5,7 +5,7 @@ import { Context } from './utils/context'
 
 const App = () => {
   const defaultValue = 'All'
-  const [context, setContext] = useState({ value: defaultValue, newValue: defaultValue, isNew: false })
+  const [context, setContext] = useState({ value: defaultValue, newValue: defaultValue, isNew: true })
 
   return (
     <Context.Provider value={[context, setContext]}>
