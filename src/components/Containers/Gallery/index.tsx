@@ -1,4 +1,4 @@
-import { useReducer, useRef, useContext } from 'react'
+import { useReducer, useRef, useContext, useEffect } from 'react'
 import { ImgState, ImgAction, PageState, PageAction, Img } from './Gallery.types'
 import { StyledGalleryWrapper } from './Gallery.styles'
 import { useFetch, useInfiniteScroll } from '../../../utils/hooks'
@@ -7,7 +7,7 @@ import ImageCard from '../../Molecules/ImageCard'
 import { Context } from '../../../utils/context'
 
 const Gallery = () => {
-  const [context] = useContext(Context)
+  const [context, setContext] = useContext(Context)
 
   const imgReducer = (state: ImgState, action: ImgAction): ImgState => {
     switch (action.type) {
@@ -45,12 +45,15 @@ const Gallery = () => {
 
   useFetch({ ...pager, query: context.newValue }, imgDispatch)
   useInfiniteScroll(bottomBoundaryRef, pagerDispatch)
+  useEffect(() => {
+    setContext({ ...context, images: imgData.images })
+  }, [imgData])
 
   return (
     <>
       <Search />
       <StyledGalleryWrapper>
-        {imgData.images.map((image: Img, index: number) => {
+        {context.images.map((image: Img, index: number) => {
           const { description, urls, id } = image
 
           return (

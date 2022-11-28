@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { width, breakpoints } from '../../../styles/global'
 
-export const StyledImageCardWrapper = styled.div<{ cardHeight: number; cardWidth: number }>`
+export const StyledImageCardWrapper = styled.div<{ cardHeight: number }>`
   --h: ${(props) => (props.cardHeight ? props.cardHeight : 500)};
-  --w: ${(props) => (props.cardWidth ? props.cardWidth : 400)};
+  --w: 400;
   margin: ${width.gap};
 
   @media (min-width: ${breakpoints.m}) {
